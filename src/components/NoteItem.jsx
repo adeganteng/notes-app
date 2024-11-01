@@ -1,3 +1,5 @@
+import { showFormattedDate } from "../utils";
+
 const NoteItem = ({
   id,
   title,
@@ -7,20 +9,12 @@ const NoteItem = ({
   onDelete,
   onArchive,
 }) => {
-  const formateDate = (date) => {
-    return new Date(date).toLocaleDateString("id-ID", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-  };
   return (
     <div>
       <div className="note-item">
         <div className="note-item__content">
           <h3 className="note-item__title">{title}</h3>
-          <p className="note-item__date">{formateDate(createdAt)}</p>
+          <p className="note-item__date">{showFormattedDate(createdAt)}</p>
           <p className="note-item__body">{body}</p>
         </div>
       </div>

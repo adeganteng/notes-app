@@ -2,13 +2,12 @@ import React from "react";
 import NoteSearch from "./components/NoteSearch";
 import NoteInput from "./components/NoteInput";
 import NoteList from "./components/NoteList";
-import { noteData } from "./utils";
-
+import { getInitialData } from "./utils";
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      notes: noteData,
+      notes: getInitialData(),
       searchKeyword: "",
     };
   }
